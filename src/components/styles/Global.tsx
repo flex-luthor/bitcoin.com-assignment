@@ -1,15 +1,14 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, DefaultTheme } from "styled-components";
+import { ThemeType } from "../../App.js";
 
-const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     * {
         box-sizing: border-box;
     }
 
     body {
         margin: 0;
-        background-color: #0e0e0e;
+        background-color: ${({ theme }) => theme.colors.black};
         font-family: 'Bebas Neue', sans-serif;
     }
 `;
