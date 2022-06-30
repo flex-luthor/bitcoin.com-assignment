@@ -2,6 +2,8 @@ import Header from "./components/Header";
 import { SharedStateProvider, useSharedState } from "./store";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
+import { Container, Row, Col } from "./components/Containers";
+import Chart from "./components/Chart";
 
 const theme = {
   colors: {
@@ -22,6 +24,13 @@ const App = () => {
         <div>
           <GlobalStyles />
           <Header />
+          <Container>
+            <Row>
+              <Col flex={1}>
+                <Chart />
+              </Col>
+            </Row>
+          </Container>
         </div>
       </ThemeProvider>
     </SharedStateProvider>
