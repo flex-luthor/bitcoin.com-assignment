@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     body {
         margin: 0;
         background-color: ${({ theme }) => theme.colors.black};
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: "Poppins", sans-serif;
     }
 `;
 

@@ -11,44 +11,15 @@ import {
 import { ReactPropTypes } from "react";
 import { ThemeContext, useTheme } from "styled-components";
 import { ThemeType } from "../App";
-
-const data = [
-  {
-    date: "2022-06-23",
-    value: 10501,
-  },
-  {
-    date: "2022-06-24",
-    value: 12435,
-  },
-  {
-    date: "2022-06-25",
-    value: 11553,
-  },
-  {
-    date: "2022-06-26",
-    value: 11444,
-  },
-  {
-    date: "2022-06-27",
-    value: 11446,
-  },
-  {
-    date: "2022-06-28",
-    value: 11252,
-  },
-  {
-    date: "2022-06-29",
-    value: 10532,
-  },
-];
+import { useSharedState } from "../store";
 
 function Container() {
   const theme = useTheme() as ThemeType;
+  const [state, useState] = useSharedState();
 
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <AreaChart data={data}>
+      <AreaChart data={state.chartData}>
         <defs>
           <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
             <stop

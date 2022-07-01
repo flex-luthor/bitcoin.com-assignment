@@ -4,6 +4,10 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
 import { Container, Row, Col } from "./components/Containers";
 import Chart from "./components/Chart";
+import PriceBox from "./components/PriceBox";
+import NewsBox from "./components/NewsBox";
+import NewsContainer from "./components/NewsContainer";
+import PriceContainer from "./components/PriceContainer";
 
 const theme = {
   colors: {
@@ -12,6 +16,7 @@ const theme = {
     black50: "#1B2430",
     black: "#131922",
     white: "#F2F2F2",
+    white50: "#F2F2F288",
   },
 };
 
@@ -28,6 +33,14 @@ const App = () => {
             <Row>
               <Col flex={1}>
                 <Chart />
+              </Col>
+            </Row>
+            <Row>
+              <Col flex={1}>
+                <PriceContainer />
+              </Col>
+              <Col flex={2}>
+                <NewsContainer />
               </Col>
             </Row>
           </Container>
