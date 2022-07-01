@@ -1,4 +1,3 @@
-import { StyledChart } from "./styles/Chart.styled";
 import {
   Area,
   AreaChart,
@@ -8,18 +7,18 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { ReactPropTypes } from "react";
-import { ThemeContext, useTheme } from "styled-components";
-import { ThemeType } from "../App";
-import { useSharedState } from "../store";
+import { useTheme } from "styled-components";
+import { ThemeType } from "../../App";
+import { useSharedState } from "../../store";
+import { format, parseISO } from "date-fns";
 
-function Container() {
+function Chart() {
   const theme = useTheme() as ThemeType;
-  const [state, useState] = useSharedState();
+  const [state] = useSharedState();
 
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <AreaChart data={state.chartData}>
+      <AreaChart data={state.chartData.slice(0, state.chartDuration).reverse()}>
         <defs>
           <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
             <stop
@@ -39,7 +38,19 @@ function Container() {
           stroke={theme.colors.primary}
           fill="url(#color)"
         />
-        <XAxis dataKey="date" axisLine={false} tickLine={false} />
+        <XAxis
+          dataKey="date"
+          axisLine={false}
+          tickLine={false}
+          tickFormatter={(str) => {
+            const date = parseISO(str);
+            const interval = state.chartDuration === 30 ? 7 : 1;
+            if (date.getDate() % interval === 0) {
+              return format(date, "MMM d");
+            }
+            return "";
+          }}
+        />
         <YAxis
           dataKey="value"
           axisLine={false}
@@ -57,4 +68,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default Chart;

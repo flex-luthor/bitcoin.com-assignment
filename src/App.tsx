@@ -1,13 +1,11 @@
-import Header from "./components/Header";
-import { SharedStateProvider, useSharedState } from "./store";
+import Header from "./components/Header/Header";
+import { SharedStateProvider } from "./store";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
 import { Container, Row, Col } from "./components/Containers";
-import Chart from "./components/Chart";
-import PriceBox from "./components/PriceBox";
-import NewsBox from "./components/NewsBox";
 import NewsContainer from "./components/NewsContainer";
 import PriceContainer from "./components/PriceContainer";
+import ChartContainer from "./components/ChartContainer";
 
 const theme = {
   colors: {
@@ -17,6 +15,7 @@ const theme = {
     black: "#131922",
     white: "#F2F2F2",
     white50: "#F2F2F288",
+    transparent: "transparent",
   },
 };
 
@@ -32,7 +31,7 @@ const App = () => {
           <Container>
             <Row>
               <Col flex={1}>
-                <Chart />
+                <ChartContainer />
               </Col>
             </Row>
             <Row>

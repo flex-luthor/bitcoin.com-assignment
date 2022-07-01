@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div`
   max-width: 1200px;
-  padding: 12px;
+  padding: 20px;
   margin: 0 auto;
 `;
 
@@ -29,5 +29,6 @@ export const StyledRow = styled.div`
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
+    gap: 0;
   }
 `;

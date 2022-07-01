@@ -1,5 +1,4 @@
-import { StyledNewsBox } from "./styles/NewsBox.styled";
-import BCHLogo from "../assets/img/svg/bch.svg";
+import { StyledNewsBox } from "../styles/NewsBox.styled";
 
 interface NewsBoxProps {
   readonly data: any;
@@ -9,7 +8,9 @@ function NewsBox(props: NewsBoxProps) {
     <StyledNewsBox>
       <div>
         <img src={props.data.thumbnail} />
-        <h2>{props.data.title}</h2>
+        <a href={props.data.href} target="_blank">
+          <h2>{props.data.title}</h2>
+        </a>
         <div className="overlay" />
       </div>
 
