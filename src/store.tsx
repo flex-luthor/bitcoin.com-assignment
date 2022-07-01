@@ -24,6 +24,7 @@ const initialState = {
   chartData: chartData,
   chartDuration: 30,
   indexClient: indexClient,
+  darkMode: true,
 };
 
 const useMyState = () => useState(initialState);

@@ -13,8 +13,10 @@ export const StyledNewsBox = styled.div`
 
   div {
     position: relative;
+    overflow: hidden;
     img {
       width: 100%;
+      min-height: 10rem;
       border-radius: 8px;
     }
 
@@ -37,7 +39,7 @@ export const StyledNewsBox = styled.div`
       width: 100%;
       position: absolute;
       bottom: 0;
-      height: 100%;
+      height: 200%;
       background-image: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0),
