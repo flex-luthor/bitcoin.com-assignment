@@ -1,4 +1,4 @@
-## Enable CORS Proxy for developemnt
+## Enable CORS Proxy for development
 
 The App is using Cors Anywhere as a cors proxy. It needs to enabled from https://cors-anywhere.herokuapp.com/
 
