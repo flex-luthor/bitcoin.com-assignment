@@ -64,7 +64,7 @@ function Chart() {
           ]}
         />
         <Tooltip />
-        <CartesianGrid opacity={0.1} vertical={false} />
+        <CartesianGrid opacity={state.darkMode ? 0.1 : 0.3} vertical={false} />
       </AreaChart>
     </ResponsiveContainer>
   );
